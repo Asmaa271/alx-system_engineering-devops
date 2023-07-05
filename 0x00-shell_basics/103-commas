@@ -1,2 +1,3 @@
 #!/bin/bash
-ls -anvp
+ls -ap1 | grep -E '^\.?[[:alnum:]]' | sort -t/ -k1,1 -k2 | tr '\n' ', ' | sed 's/,$/\n/'
+
